@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECHATEN — мобильное металлообрабатывающее оборудование и ремонт станков</title>
+<meta name="description" content="MECHATEN — производитель мобильного металлообрабатывающего оборудования полного цикла и сервисная компания: ремонт и восстановление производственного оборудования, модернизация станков, оснащение ЧПУ.">
+<meta name="theme-color" content="#111315">
+<!-- После публикации укажите реальный адрес сайта: -->
+<!-- <link rel="canonical" href="https://ВАШ-ДОМЕН/"> -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="MECHATEN — мобильная механообработка и ремонт оборудования">
+<meta property="og:description" content="Производим мобильное металлообрабатывающее оборудование и восстанавливаем производственное оборудование заказчиков.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111315'/%3E%3Cpath d='M7 24V8l9 10 9-10v16' fill='none' stroke='%23FF5B1A' stroke-width='3.2' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1564182842519-8a3b2af3e228?auto=format&fit=crop&w=1920&h=1080&q=70" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Фото: Unsplash (unsplash.com/license) — Josh Beech, Spencer Davis, EnCata PD, Orbitol Intelligence, Sven Daniel, aluminum Zheng ji, Greg Rosenke, Zoshua Colah, mick henson.
+     Для продакшена рекомендуется заменить на собственные фото работ MECHATEN. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MECHATEN",
+  "description": "Производитель мобильного металлообрабатывающего оборудования полного цикла и сервисная компания по ремонту и восстановлению производственного оборудования.",
+  "knowsAbout": ["Мобильная механическая обработка", "Ремонт станков", "Модернизация станков", "Оснащение системами ЧПУ", "Механическая обработка металлов"]
+}
+</script>
+<style>
+:root{
+  --ink:#111315; --ink-2:#1A1D21; --ink-3:#24282D;
+  --steel:#8A929B; --line:rgba(255,255,255,.09); --line-dark:rgba(17,19,21,.12);
+  --paper:#EEECE7; --paper-2:#E3E0D9; --white:#fff;
+  --accent:#FF5B1A; --accent-2:#FF7A45;
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --text:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --wrap:1240px; --pad:clamp(20px,4vw,48px);
+  --r:4px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font:400 17px/1.6 var(--text);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;margin:0;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--accent);color:#fff;padding:8px 14px;z-index:100}
+.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 26px;border-radius:var(--r);font:700 15px/1 var(--text);text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.btn svg{width:18px;height:18px;transition:transform .2s}
+.btn:hover svg{transform:translateX(4px)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-ghost{border-color:rgba(255,255,255,.28);color:#fff}
+.btn-ghost:hover{border-color:#fff}
+
+/* ---------- header ---------- */
+.header{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.header.scrolled{background:rgba(17,19,21,.92);backdrop-filter:blur(10px);border-color:var(--line)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.logo-mark{width:34px;height:34px}
+.logo-word{font:700 19px/1 var(--display);letter-spacing:.06em}
+.nav{display:flex;gap:34px}
+.nav a{color:rgba(255,255,255,.78);text-decoration:none;font-weight:500;font-size:15px;transition:color .2s}
+.nav a:hover{color:#fff}
+.header .btn{padding:12px 20px;font-size:14px}
+.burger{display:none;background:none;border:0;width:44px;height:44px;padding:10px;cursor:pointer}
+.burger span{display:block;height:2px;background:#fff;margin:6px 0;transition:transform .25s,opacity .25s}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;padding:150px 0 0}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse 80% 70% at 70% 40%,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 80% 70% at 70% 40%,#000 30%,transparent 80%);pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero .tag{display:inline-flex;align-items:center;gap:10px;color:var(--steel);margin-bottom:28px}
+.hero .tag::before{content:"";width:28px;height:1.5px;background:var(--accent)}
+.hero h1{font-size:clamp(34px,5.2vw,68px)}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-lead{margin-top:28px;max-width:540px;font-size:clamp(17px,1.5vw,19px);color:rgba(255,255,255,.72)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.drawing{width:100%;aspect-ratio:1/1;max-width:560px;justify-self:end}
+.drawing .thin{stroke:rgba(255,255,255,.28);stroke-width:1}
+.drawing .main{stroke:rgba(255,255,255,.85);stroke-width:1.6}
+.drawing .acc{stroke:var(--accent);stroke-width:2}
+.drawing text{font:500 11px var(--mono);fill:var(--steel);letter-spacing:.06em}
+.rotor{transform-origin:280px 280px;animation:spin 18s linear infinite}
+.draw path,.draw circle,.draw line{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.4s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-bar{position:relative;z-index:1;margin-top:70px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr)}
+.hero-bar div{padding:26px 0 30px;display:flex;gap:16px;align-items:baseline;border-right:1px solid var(--line)}
+.hero-bar div:last-child{border-right:0}
+.hero-bar div+div{padding-left:28px}
+.hero-bar .mono{color:var(--accent)}
+.hero-bar span:last-child{font-weight:500;color:rgba(255,255,255,.85)}
+
+/* ---------- sections ---------- */
+section{padding:clamp(80px,10vw,140px) 0}
+.sec-head{display:grid;grid-template-columns:260px 1fr;gap:40px;margin-bottom:64px;align-items:start}
+.sec-head .mono{color:var(--accent);padding-top:12px;border-top:1.5px solid currentColor;display:inline-block}
+.sec-head h2{font-size:clamp(28px,3.8vw,50px);max-width:820px}
+.sec-head p{margin-top:22px;max-width:640px;color:#4A5057;font-size:18px}
+
+/* about / two pillars */
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line-dark);border:1px solid var(--line-dark)}
+.pillar{background:var(--paper);padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;gap:18px;min-height:340px}
+.pillar .num{font:700 64px/1 var(--display);color:transparent;-webkit-text-stroke:1.5px var(--ink);opacity:.18}
+.pillar h3{font-size:clamp(22px,2.2vw,28px)}
+.pillar p{color:#4A5057}
+.pillar ul{list-style:none;margin:auto 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.pillar li{font:500 13px var(--mono);padding:7px 12px;border:1px solid var(--line-dark);border-radius:2px;color:#33383E}
+
+/* services */
+.services{background:var(--ink);color:#fff}
+.services .sec-head p{color:rgba(255,255,255,.62)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.svc{position:relative;padding:38px 34px 44px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:22px;transition:background .3s}
+.svc:hover{background:var(--ink-2)}
+.svc::after{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--accent);transition:width .4s}
+.svc:hover::after{width:100%}
+.svc-top{display:flex;justify-content:space-between;align-items:flex-start}
+.svc-top .mono{color:var(--steel)}
+.svc-ico{width:52px;height:52px;stroke:var(--accent);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.svc h3{font-size:20px;line-height:1.25}
+.svc p{color:rgba(255,255,255,.6);font-size:15.5px}
+
+/* why */
+.why-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(40px,6vw,90px);align-items:start}
+.quote{font:700 clamp(26px,3vw,40px)/1.18 var(--display);letter-spacing:-.01em}
+.quote b{color:var(--accent);font-weight:700}
+.why-note{margin-top:28px;color:#4A5057;max-width:520px}
+.why-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-dark)}
+.why-list li{display:grid;grid-template-columns:56px 1fr;gap:12px;padding:26px 0;border-bottom:1px solid var(--line-dark)}
+.why-list .mono{color:var(--accent);padding-top:4px}
+.why-list h3{font:700 19px/1.3 var(--text);margin-bottom:6px;letter-spacing:0}
+.why-list p{color:#4A5057;font-size:15.5px}
+
+/* process */
+.process{background:var(--paper-2)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.step{position:relative;padding-top:30px}
+.step::before{content:"";position:absolute;top:8px;left:0;right:-20px;height:1.5px;background:var(--ink);opacity:.15}
+.step:last-child::before{right:0}
+.step::after{content:"";position:absolute;top:3px;left:0;width:12px;height:12px;background:var(--accent);border-radius:50%}
+.step .mono{color:#6A7077;display:block;margin:6px 0 14px}
+.step h3{font:700 19px/1.3 var(--text);letter-spacing:0;margin-bottom:8px}
+.step p{color:#4A5057;font-size:15.5px}
+
+/* contact */
+.contact{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px)}
+.contact h2{font-size:clamp(30px,4vw,54px)}
+.contact-lead{margin-top:22px;color:rgba(255,255,255,.66);max-width:460px}
+.c-list{margin-top:44px;display:grid;gap:0;border-top:1px solid var(--line)}
+.c-item{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.c-item .mono{color:var(--steel)}
+.c-item>a,.c-item>span:not(.mono){font-size:18px;font-weight:500;text-decoration:none}
+.c-item a:hover{color:var(--accent)}
+.c-item>span.todo{color:rgba(255,255,255,.4);font-style:italic;font-size:15px;font-weight:400}
+form{background:var(--ink-2);border:1px solid var(--line);padding:clamp(24px,3.5vw,44px);display:grid;gap:18px;align-self:start}
+form h3{font:700 22px/1.2 var(--display);margin-bottom:4px}
+label{display:grid;gap:8px;font-size:14px;color:rgba(255,255,255,.7)}
+input,textarea,select{font:500 16px var(--text);color:#fff;background:var(--ink);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:14px 16px;width:100%;transition:border-color .2s}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent)}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%238A929B' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+textarea{min-height:110px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:rgba(255,255,255,.5);line-height:1.45}
+.consent input{width:18px;height:18px;margin-top:1px;flex:none;accent-color:var(--accent)}
+form .btn{justify-content:center;width:100%}
+.form-msg{font-size:14px;min-height:20px;color:var(--accent-2)}
+
+/* footer */
+footer{background:#0B0C0E;color:rgba(255,255,255,.5);padding:34px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer .logo-word{font-size:15px;color:#fff}
+footer nav{display:flex;gap:24px;flex-wrap:wrap}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+
+
+/* ---------- photos ---------- */
+.hero-bg{position:absolute;inset:0;pointer-events:none}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.32;filter:saturate(.85)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ink) 18%,rgba(17,19,21,.72) 55%,rgba(17,19,21,.55)),linear-gradient(0deg,var(--ink) 2%,transparent 35%)}
+.ph{position:relative;overflow:hidden;background:var(--ink-3);margin:0;flex:none}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s}
+.pillar .ph{aspect-ratio:16/9;margin:calc(-1*clamp(28px,4vw,52px)) calc(-1*clamp(28px,4vw,52px)) 8px}
+.pillar:hover .ph img{transform:scale(1.04)}
+.pillar .ph figcaption{position:absolute;left:16px;bottom:14px;font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(17,19,21,.75);padding:6px 10px}
+.svc .ph{aspect-ratio:16/10;margin:-38px -34px 4px}
+.svc .ph img{filter:grayscale(1) contrast(1.05) brightness(.8)}
+.svc:hover .ph img{filter:none;transform:scale(1.05)}
+.svc .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(17,19,21,.55),transparent 55%)}
+.why-ph{aspect-ratio:4/3;margin-top:40px}
+.why-ph::before{content:"";position:absolute;left:0;top:0;width:64px;height:4px;background:var(--accent);z-index:1}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .draw path,.draw circle,.draw line{stroke-dashoffset:0}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1024px){
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);row-gap:44px}
+  .step:nth-child(2)::before{right:0}
+  .sec-head{grid-template-columns:1fr;gap:20px}
+}
+@media (max-width:900px){
+  .nav,.header .btn{display:none}
+  .burger{display:block}
+  .header.open{background:var(--ink)}
+  .header.open .nav{display:flex;position:fixed;top:76px;left:0;right:0;bottom:0;flex-direction:column;gap:0;background:var(--ink);padding:20px var(--pad)}
+  .header.open .nav a{font:700 26px/1 var(--display);padding:22px 0;border-bottom:1px solid var(--line);color:#fff}
+  .header.open .burger span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .header.open .burger span:nth-child(2){opacity:0}
+  .header.open .burger span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .hero{padding-top:120px}
+  .hero-grid{grid-template-columns:1fr}
+  .drawing{max-width:420px;justify-self:center;margin-top:10px}
+  .hero-bar{grid-template-columns:1fr}
+  .hero-bar div{border-right:0;border-bottom:1px solid var(--line);padding:18px 0!important}
+  .hero-bar div:last-child{border-bottom:0}
+  .pillars,.why-grid,.contact-grid{grid-template-columns:1fr}
+  .pillar{min-height:0}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .svc-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .step::before{right:0!important}
+  .row2{grid-template-columns:1fr}
+  .c-item{grid-template-columns:1fr;gap:4px}
+  .hero-cta .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержимому</a>
+
+<header class="header" id="header">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="MECHATEN — на главную">
+      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#FF5B1A"/><path d="M7 24V8l9 10 9-10v16" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg>
+      <span class="logo-word">MECHATEN</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#about">О компании</a>
+      <a href="#services">Услуги</a>
+      <a href="#why">Почему мы</a>
+      <a href="#process">Как работаем</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="btn btn-primary" href="#contacts">Обсудить задачу</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1564182842519-8a3b2af3e228?auto=format&fit=crop&w=1920&h=1080&q=70" alt="" width="1920" height="1080" fetchpriority="high"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="tag mono">Производство · Сервис · Механообработка</p>
+        <h1>Мобильная механообработка <em>там, где&nbsp;стоит</em> ваше оборудование</h1>
+        <p class="hero-lead">MECHATEN — производитель мобильного металлообрабатывающего оборудования полного цикла и&nbsp;сервисная компания, которая ремонтирует и&nbsp;восстанавливает производственное оборудование заказчиков.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contacts">Обсудить задачу
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h13M11 4l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="#services">Наши услуги</a>
+        </div>
+      </div>
+
+      <!-- Технический чертёж: мобильный станок для торцевой обработки фланца -->
+      <svg class="drawing" viewBox="0 0 560 560" role="img" aria-label="Схема мобильной обработки фланца">
+        <g class="draw" fill="none">
+          <circle class="thin" cx="280" cy="280" r="250" stroke-dasharray="4 8"/>
+          <line class="thin" x1="10" y1="280" x2="550" y2="280" stroke-dasharray="14 6 3 6"/>
+          <line class="thin" x1="280" y1="10" x2="280" y2="550" stroke-dasharray="14 6 3 6"/>
+          <circle class="main" cx="280" cy="280" r="200"/>
+          <circle class="main" cx="280" cy="280" r="120"/>
+          <circle class="thin" cx="280" cy="280" r="160"/>
+        </g>
+        <g class="draw" fill="none" id="bolts"></g>
+        <g class="rotor" fill="none">
+          <rect class="acc" x="268" y="98" width="24" height="182" rx="3"/>
+          <rect class="main" x="258" y="84" width="44" height="30" rx="2"/>
+          <path class="acc" d="M280 84v-14M272 70h16"/>
+          <circle class="acc" cx="280" cy="280" r="34"/>
+          <circle class="main" cx="280" cy="280" r="14"/>
+        </g>
+        <g class="draw" fill="none">
+          <path class="thin" d="M80 520h400M80 512v16M480 512v16"/>
+          <path class="thin" d="M520 80v400M512 80h16M512 480h16"/>
+          <path class="thin" d="M396 164l58-58h70"/>
+        </g>
+        <text x="252" y="510">Ø 400</text>
+        <text x="458" y="100">РЕЗЕЦ</text>
+        <text x="20" y="40">MCH · FLANGE FACING</text>
+        <text x="20" y="58" fill="#FF5B1A">ON-SITE</text>
+      </svg>
+    </div>
+
+    <div class="hero-bar">
+      <div><span class="mono">01</span><span>Собственное производство оборудования</span></div>
+      <div><span class="mono">02</span><span>Выездной ремонт и восстановление</span></div>
+      <div><span class="mono">03</span><span>Модернизация станков и ЧПУ</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="mono">Кто мы</span>
+      <div>
+        <h2>Два направления — одна инженерная команда</h2>
+        <p>Мы проектируем и выпускаем мобильное оборудование для нестандартных технологических задач и сами применяем его в сервисных работах на объектах заказчиков.</p>
+      </div>
+    </div>
+    <div class="pillars">
+      <article class="pillar rv">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1764114441097-6a475eca993d?auto=format&fit=crop&w=1200&h=676&q=70" srcset="https://images.unsplash.com/photo-1764114441097-6a475eca993d?auto=format&fit=crop&w=600&h=338&q=70 600w, https://images.unsplash.com/photo-1764114441097-6a475eca993d?auto=format&fit=crop&w=1200&h=676&q=70 1200w" sizes="(max-width:600px) 100vw, (max-width:1024px) 50vw, 33vw" width="1200" height="676" alt="Цех со станочным оборудованием" loading="lazy" decoding="async"><figcaption>Производство</figcaption></figure>
+        <span class="num">01</span>
+        <h3>Производитель полного цикла</h3>
+        <p>Разрабатываем опытно-конструкторские образцы и производим мобильное металлообрабатывающее оборудование для уникальных технологических задач. Оснащаем им сервисные предприятия.</p>
+        <ul><li>Разработка</li><li>Опытные образцы</li><li>Серийное производство</li></ul>
+      </article>
+      <article class="pillar rv">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1644522248824-ed975fd9ee81?auto=format&fit=crop&w=1200&h=676&q=70" srcset="https://images.unsplash.com/photo-1644522248824-ed975fd9ee81?auto=format&fit=crop&w=600&h=338&q=70 600w, https://images.unsplash.com/photo-1644522248824-ed975fd9ee81?auto=format&fit=crop&w=1200&h=676&q=70 1200w" sizes="(max-width:600px) 100vw, (max-width:1024px) 50vw, 33vw" width="1200" height="676" alt="Специалист работает на токарном станке" loading="lazy" decoding="async"><figcaption>Сервис</figcaption></figure>
+        <span class="num">02</span>
+        <h3>Сервисная компания</h3>
+        <p>Ремонтируем и восстанавливаем производственное оборудование заказчиков, модернизируем станочный парк, оснащаем станки системами ЧПУ и выполняем механическую обработку металлов.</p>
+        <ul><li>Ремонт</li><li>Восстановление</li><li>Модернизация</li><li>ЧПУ</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="mono">Услуги</span>
+      <div>
+        <h2>Что мы делаем</h2>
+        <p>Шесть направлений работ — от разовой механообработки детали до разработки и поставки оборудования под задачу.</p>
+      </div>
+    </div>
+    <div class="svc-grid">
+      <article class="svc rv">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1598302936625-6075fbd98dd7?auto=format&fit=crop&w=800&h=500&q=70" srcset="https://images.unsplash.com/photo-1598302936625-6075fbd98dd7?auto=format&fit=crop&w=400&h=250&q=70 400w, https://images.unsplash.com/photo-1598302936625-6075fbd98dd7?auto=format&fit=crop&w=800&h=500&q=70 800w" sizes="(max-width:600px) 100vw, (max-width:1024px) 50vw, 33vw" width="800" height="500" alt="Шлифовка металлической конструкции, искры" loading="lazy" decoding="async"></figure>
+        <div class="svc-top">
+          <svg class="svc-ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M30 6a9 9 0 0 0-8.5 12L7 32.5a3.5 3.5 0 0 0 5 5L26.5 23A9 9 0 0 0 38 14l-5 5-5-1-1-5 5-5a9 9 0 0 0-2-2z"/></svg>
+          <span class="mono">01</span>
+        </div>
+        <h3>Ремонтно-восстановительные работы</h3>
+        <p>Восстанавливаем рабочие поверхности и узлы производственного оборудования, в том числе на месте его эксплуатации.</p>
+      </article>
+      <article class="svc rv">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1769147339214-076740872485?auto=format&fit=crop&w=800&h=500&q=70" srcset="https://images.unsplash.com/photo-1769147339214-076740872485?auto=format&fit=crop&w=400&h=250&q=70 400w, https://images.unsplash.com/photo-1769147339214-076740872485?auto=format&fit=crop&w=800&h=500&q=70 800w" sizes="(max-width:600px) 100vw, (max-width:1024px) 50vw, 33vw" width="800" height="500" alt="Металлические детали на инженерных чертежах" loading="lazy" decoding="async"></figure>
+        <div class="svc-top">
+          <svg class="svc-ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 40h36M10 40V20l14-12 14 12v20"/><path d="M18 40V28h12v12"/><circle cx="24" cy="19" r="3"/></svg>
+          <span class="mono">02</span>
+        </div>
+        <h3>Разработка опытно-конструкторских образцов</h3>
+        <p>Проектируем и изготавливаем опытные образцы оборудования под конкретную технологическую задачу.</p>
+      </article>
+      <article class="svc rv">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1787039467622-ddec5c24320c?auto=format&fit=crop&w=800&h=500&q=70" srcset="https://images.unsplash.com/photo-1787039467622-ddec5c24320c?auto=format&fit=crop&w=400&h=250&q=70 400w, https://images.unsplash.com/photo-1787039467622-ddec5c24320c?auto=format&fit=crop&w=800&h=500&q=70 800w" sizes="(max-width:600px) 100vw, (max-width:1024px) 50vw, 33vw" width="800" height="500" alt="Цех со станками с ЧПУ" loading="lazy" decoding="async"></figure>
+        <div class="svc-top">
+          <svg class="svc-ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="7"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.9 9.9l4.2 4.2M33.9 33.9l4.2 4.2M9.9 38.1l4.2-4.2M33.9 14.1l4.2-4.2"/></svg>
+          <span class="mono">03</span>
+        </div>
+        <h3>Производство металлообрабатывающего оборудования</h3>
+        <p>Выпускаем мобильные станки для механообработки крупногабаритных деталей без их демонтажа и транспортировки.</p>
+      </article>
+      <article class="svc rv">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1666634157070-6fd830fb5672?auto=format&fit=crop&w=800&h=500&q=70" srcset="https://images.unsplash.com/photo-1666634157070-6fd830fb5672?auto=format&fit=crop&w=400&h=250&q=70 400w, https://images.unsplash.com/photo-1666634157070-6fd830fb5672?auto=format&fit=crop&w=800&h=500&q=70 800w" sizes="(max-width:600px) 100vw, (max-width:1024px) 50vw, 33vw" width="800" height="500" alt="Обработка металлического вала на токарном станке" loading="lazy" decoding="async"></figure>
+        <div class="svc-top">
+          <svg class="svc-ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 30h32v10H8z"/><path d="M24 30V18M18 12h12l-2 6h-8z"/><path d="M14 30l4-6h12l4 6"/></svg>
+          <span class="mono">04</span>
+        </div>
+        <h3>Механическая обработка металлов</h3>
+        <p>Выполняем токарные, фрезерные, расточные и другие операции по чертежам и образцам заказчика.</p>
+      </article>
+      <article class="svc rv">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1740209475472-aa7d280f7452?auto=format&fit=crop&w=800&h=500&q=70" srcset="https://images.unsplash.com/photo-1740209475472-aa7d280f7452?auto=format&fit=crop&w=400&h=250&q=70 400w, https://images.unsplash.com/photo-1740209475472-aa7d280f7452?auto=format&fit=crop&w=800&h=500&q=70 800w" sizes="(max-width:600px) 100vw, (max-width:1024px) 50vw, 33vw" width="800" height="500" alt="Фрезерный станок с ЧПУ обрабатывает заготовку" loading="lazy" decoding="async"></figure>
+        <div class="svc-top">
+          <svg class="svc-ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="8" width="36" height="24" rx="2"/><path d="M16 40h16M24 32v8"/><path d="M13 24l6-8 5 5 4-4 7 7"/></svg>
+          <span class="mono">05</span>
+        </div>
+        <h3>Ремонт и модернизация станков, оснащение ЧПУ</h3>
+        <p>Возвращаем станкам точность и продлеваем срок службы: капитальный ремонт, модернизация, установка систем ЧПУ.</p>
+      </article>
+      <article class="svc rv">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1585201731775-0597e1be4bfb?auto=format&fit=crop&w=800&h=500&q=70" srcset="https://images.unsplash.com/photo-1585201731775-0597e1be4bfb?auto=format&fit=crop&w=400&h=250&q=70 400w, https://images.unsplash.com/photo-1585201731775-0597e1be4bfb?auto=format&fit=crop&w=800&h=500&q=70 800w" sizes="(max-width:600px) 100vw, (max-width:1024px) 50vw, 33vw" width="800" height="500" alt="Сверло в работе, искры" loading="lazy" decoding="async"></figure>
+        <div class="svc-top">
+          <svg class="svc-ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 12h24v20H4zM28 18h9l7 7v7H28z"/><circle cx="12" cy="36" r="4"/><circle cx="36" cy="36" r="4"/></svg>
+          <span class="mono">06</span>
+        </div>
+        <h3>Поставка оборудования и расходных материалов</h3>
+        <p>Комплектуем производство оборудованием, инструментом и расходными материалами под ваши задачи.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY ===== -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="mono">Почему мы</span>
+      <div><h2>Оборудование и сервис из одних рук</h2></div>
+    </div>
+    <div class="why-grid">
+      <div class="rv">
+        <p class="quote">MECHATEN — это <b>мобильность</b> и&nbsp;<b>технологичность</b> при наличии высоких потребительских качеств</p>
+        <p class="why-note">Мы производим мобильное станочное оборудование для решения сложных технических задач и оснащаем им сервисные предприятия — а значит, знаем его возможности на практике.</p>
+        <figure class="ph why-ph"><img src="https://images.unsplash.com/photo-1666618090858-fbcee636bd3e?auto=format&fit=crop&w=1000&h=750&q=70" srcset="https://images.unsplash.com/photo-1666618090858-fbcee636bd3e?auto=format&fit=crop&w=500&h=375&q=70 500w, https://images.unsplash.com/photo-1666618090858-fbcee636bd3e?auto=format&fit=crop&w=1000&h=750&q=70 1000w" sizes="(max-width:600px) 100vw, (max-width:1024px) 50vw, 33vw" width="1000" height="750" alt="Патрон токарного станка с закреплённой деталью" loading="lazy" decoding="async"></figure>
+      </div>
+      <ul class="why-list rv">
+        <li><span class="mono">/01</span><div><h3>Работа на месте</h3><p>Мобильное оборудование позволяет обрабатывать крупные узлы там, где они установлены, — без демонтажа и перевозки.</p></div></li>
+        <li><span class="mono">/02</span><div><h3>Нестандартные задачи</h3><p>Когда серийного решения нет, разрабатываем и изготавливаем оборудование под конкретную технологическую задачу.</p></div></li>
+        <li><span class="mono">/03</span><div><h3>Полный цикл</h3><p>Разработка, производство, механообработка, ремонт и поставка — один подрядчик и одна зона ответственности.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="mono">Как работаем</span>
+      <div><h2>От заявки до результата</h2></div>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="mono">Шаг 01</span><h3>Заявка</h3><p>Описываете задачу: оборудование, характер неисправности или требования к обработке.</p></div>
+      <div class="step rv"><span class="mono">Шаг 02</span><h3>Диагностика</h3><p>Изучаем исходные данные, при необходимости выезжаем на объект и проводим замеры.</p></div>
+      <div class="step rv"><span class="mono">Шаг 03</span><h3>Решение</h3><p>Предлагаем технологию работ, сроки и стоимость, согласуем с вами.</p></div>
+      <div class="step rv"><span class="mono">Шаг 04</span><h3>Выполнение</h3><p>Выполняем работы, проверяем результат и передаём оборудование в эксплуатацию.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTS ===== -->
+<section class="contact" id="contacts">
+  <div class="wrap contact-grid">
+    <div class="rv">
+      <span class="mono" style="color:var(--accent)">Контакты</span>
+      <h2 style="margin-top:18px">Расскажите о&nbsp;задаче</h2>
+      <p class="contact-lead">Опишите оборудование и что нужно сделать — инженер свяжется с вами, чтобы уточнить детали.</p>
+      <div class="c-list" id="c-list"></div>
+    </div>
+    <form id="lead-form" class="rv" novalidate>
+      <h3>Заявка</h3>
+      <div class="row2">
+        <label>Имя<input name="name" autocomplete="name" required></label>
+        <label>Телефон<input name="phone" type="tel" autocomplete="tel" required></label>
+      </div>
+      <label>Компания<input name="company" autocomplete="organization"></label>
+      <label>Услуга
+        <select name="service">
+          <option>Ремонтно-восстановительные работы</option>
+          <option>Разработка опытного образца</option>
+          <option>Производство оборудования</option>
+          <option>Механическая обработка металлов</option>
+          <option>Ремонт и модернизация станков, ЧПУ</option>
+          <option>Поставка оборудования и расходников</option>
+          <option>Другое</option>
+        </select>
+      </label>
+      <label>Описание задачи<textarea name="message" placeholder="Оборудование, размеры, сроки…"></textarea></label>
+      <label class="consent"><input type="checkbox" name="consent" required><span>Согласен на обработку персональных данных</span></label>
+      <button class="btn btn-primary" type="submit">Отправить заявку</button>
+      <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="logo-word">MECHATEN</span></a>
+    <nav aria-label="Нижняя навигация">
+      <a href="#about">О компании</a><a href="#services">Услуги</a><a href="#why">Почему мы</a><a href="#contacts">Контакты</a>
+    </nav>
+    <span>© <span id="year"></span> MECHATEN</span>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   КОНТАКТЫ — заполните реальными данными.
+   Пустое значение = строка показывается как «уточняется».
+   ========================================================= */
+const CONTACTS = {
+  phone:   '',   // например: '+7 900 000-00-00'
+  email:   '',   // например: 'info@example.ru' — на этот адрес уйдут заявки
+  address: '',   // город, улица
+  hours:   ''    // например: 'Пн–Пт, 9:00–18:00'
+};
+
+(function(){
+  const $ = s => document.querySelector(s);
+  $('#year').textContent = new Date().getFullYear();
+
+  // contacts render
+  const rows = [
+    ['Телефон', CONTACTS.phone, v => `<a href="tel:${v.replace(/[^\d+]/g,'')}">${v}</a>`],
+    ['E-mail',  CONTACTS.email, v => `<a href="mailto:${v}">${v}</a>`],
+    ['Адрес',   CONTACTS.address, v => `<span>${v}</span>`],
+    ['Режим',   CONTACTS.hours, v => `<span>${v}</span>`]
+  ];
+  $('#c-list').innerHTML = rows.map(([k,v,f]) =>
+    `<div class="c-item"><span class="mono">${k}</span>${v ? f(v) : '<span class="todo">уточняется</span>'}</div>`).join('');
+
+  // bolt holes on drawing
+  const g = $('#bolts'); const NS='http://www.w3.org/2000/svg';
+  for(let i=0;i<12;i++){ const a=i*Math.PI/6; const c=document.createElementNS(NS,'circle');
+    c.setAttribute('cx',280+180*Math.cos(a)); c.setAttribute('cy',280+180*Math.sin(a)); c.setAttribute('r',9);
+    c.setAttribute('class','main'); c.style.animationDelay=(.6+i*.06)+'s'; g.appendChild(c); }
+
+  // header
+  const header = $('#header'), burger = $('#burger');
+  const onScroll = () => header.classList.toggle('scrolled', scrollY > 30);
+  onScroll(); addEventListener('scroll', onScroll, {passive:true});
+  burger.addEventListener('click', () => {
+    const open = header.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  document.querySelectorAll('#nav a').forEach(a => a.addEventListener('click', () => {
+    header.classList.remove('open'); burger.setAttribute('aria-expanded', false); document.body.style.overflow='';
+  }));
+
+  // reveal
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }), {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.rv').forEach((el,i) => { el.style.transitionDelay = (i%3)*80+'ms'; io.observe(el); });
+  } else document.querySelectorAll('.rv').forEach(el => el.classList.add('in'));
+
+  // form → mailto (GitHub Pages не имеет сервера)
+  const form = $('#lead-form'), msg = $('#form-msg');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(form));
+    if(!d.name.trim() || !d.phone.trim()){ msg.textContent = 'Укажите имя и телефон.'; return; }
+    if(!form.consent.checked){ msg.textContent = 'Подтвердите согласие на обработку данных.'; return; }
+    if(!CONTACTS.email){ msg.textContent = 'Приём заявок скоро заработает. Пока свяжитесь с нами по телефону.'; return; }
+    const body = `Имя: ${d.name}\nТелефон: ${d.phone}\nКомпания: ${d.company||'—'}\nУслуга: ${d.service}\n\n${d.message||''}`;
+    location.href = `mailto:${CONTACTS.email}?subject=${encodeURIComponent('Заявка с сайта MECHATEN')}&body=${encodeURIComponent(body)}`;
+    msg.textContent = 'Открываем почтовый клиент для отправки заявки…';
+  });
+})();
+</script>
+</body>
+</html>
